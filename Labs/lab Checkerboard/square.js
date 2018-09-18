@@ -11,11 +11,12 @@ function Sqr(location, sidelength, clr){
   this.loc = location;
     this.w = sidelength;
   this.col = clr;
-}
-//  Add instance variables to your constructor Function
-//What does a square need to know about itself??
-this.render = function(){
-  fill(255,0,0)
-  square(this.loc.x,this.loc.y)
-}
-//  End of Square constructor function
+
+  //  Add instance variables to your constructor Function
+  //What does a square need to know about itself??
+  this.render = function(){
+    fill(255,0,0)
+    rect(this.loc.x,this.loc.y, this.w, this.w)
+  }
+
+}//  End of Square constructor function
