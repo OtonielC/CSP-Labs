@@ -14,7 +14,7 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(20,20,20);
-  b1.run();
+
 	for(var i = 0; i < balls.length;i++){
 		balls[i].run();
 	}

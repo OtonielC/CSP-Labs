@@ -17,7 +17,9 @@ function ball (loc, vel, radius, col,acc){
     this.loc.add(this.vel);
     if(this !== b1){
       var d = this.loc.dist(b1.loc)
-      if(d<3000){
+      var mouseLoc = createVector(mouseX, mouseY);
+      this.loc = p5.Vector.lerp(this.loc, mouseLoc, .02)
+      if(d<1000){
         var steeringForce = p5.Vector.sub(b1.loc, this.loc);
         steeringForce.normalize();
         steeringForce.mult(.2);
