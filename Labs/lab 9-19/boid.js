@@ -1,7 +1,6 @@
-function ball (loc, vel, radius, col,acc){
+function boid (loc, vel, col,acc){
   this.loc = loc;
   this.vel = vel;
-  this.rad = radius;
   this.col = col;
   this.acc = acc;
 
@@ -16,16 +15,15 @@ function ball (loc, vel, radius, col,acc){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
     if(this !== b1){
-      var d = this.loc.dist(b1.loc)
       var mouseLoc = createVector(mouseX, mouseY);
       this.loc = p5.Vector.lerp(this.loc, mouseLoc, .02)
-      if(d<1000){
+      if(mouseLoc<1000){
         var steeringForce = p5.Vector.sub(b1.loc, this.loc);
         steeringForce.normalize();
         steeringForce.mult(.2);
         this.vel.add(steeringForce);
       }
-      if(d < 100){
+      if(mouseLoc < 100){
         var steeringForce = p5.Vector.sub( this.loc, b1.loc);
         steeringForce.normalize();
         steeringForce.mult(.2);

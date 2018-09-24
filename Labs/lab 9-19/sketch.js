@@ -1,5 +1,5 @@
 var b1;
-var balls = []
+var boids = []
 //  This is a comment
 //  The setup function function is called once when your program begins
 function setup() {
@@ -8,24 +8,23 @@ function setup() {
   background(20, 20, 20);
   fill(200, 30, 150);
   loadBalls(200);
-  b1 = new ball(createVector(width/2,height/2), createVector(0,0), 25, color(255,0,0))
+  b1 = new boid(createVector(width/2,height/2), createVector(0,0), 25, color(255,0,0))
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(20,20,20);
-
-	for(var i = 0; i < balls.length;i++){
-		balls[i].run();
+	for(var i = 0; i < boids.length;i++){
+		boids[i].run();
 	}
 }
- function loadBalls(numBalls){
-   for(var i = 0; i < numBalls; i++){
+ function loadBalls(numboids){
+   for(var i = 0; i < numboids; i++){
      var loc = createVector(random(width), random(height));
      var vel = createVector(random(-3.0, 3.0), random(-3.0, 3.0));
-     var radius = (20);
      var col = color(random(255), random(255), random(255));
      var acc = createVector(0,.01)
-     balls.push(new ball(loc, vel, radius, col, acc));
+     var b = new boid(loc, vel, col, acc)
+     boids.push(b)
    }
  }
