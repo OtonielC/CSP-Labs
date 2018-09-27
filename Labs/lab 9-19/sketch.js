@@ -28,6 +28,7 @@ function draw() {
      boids.push(b)
    }
    function spliceboids(){
-     if
+     if boid.location = ball.mouseLoc;
+      
    }
  }
