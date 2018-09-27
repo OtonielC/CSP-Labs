@@ -12,25 +12,17 @@ function boid (loc, vel, col,acc){
 
 
   this.update = function(){
-    this.vel.add(this.acc);
     this.loc.add(this.vel);
-    if(this !== b1){
+    if(this.b1 !== mouseLoc){
       var mouseLoc = createVector(mouseX, mouseY);
-      this.loc = p5.Vector.lerp(this.loc, mouseLoc, .2)
-      if(mouseLoc<1000){
-        var steeringForce = p5.Vector.sub(b1.loc, this.loc);
-        steeringForce.normalize();
-        steeringForce.mult(.2);
-        this.vel.add(steeringForce);
-      }
-      if(mouseLoc < 100){
-        var steeringForce = p5.Vector.sub( this.loc, b1.loc);
-        steeringForce.normalize();
-        steeringForce.mult(.2);
-        this.vel.add(steeringForce);
+      this.loc = p5.Vector.lerp(this.loc, mouseLoc)
+      var steeringForce = p5.Vector.sub(mouseLoc, this.loc);
+      steeringForce.normalize();
+      steeringForce.mult(.4);
+      this.vel.add(steeringForce);
       }
     }
-  }
+
 
 
   this.checkEdges = function(){
@@ -44,7 +36,7 @@ function boid (loc, vel, col,acc){
   this.render = function(){
     push()
       translate(this.loc.x, this.loc.y);
-      rotate(PI);
+      rotate();
       triangle(-5,0,5,0,0,-15)
     pop()
     fill(this.col);
