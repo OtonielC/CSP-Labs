@@ -10,13 +10,12 @@ function boid (loc, vel, col,acc){
     this.render();
   }
 
-
+//this functipon is supposed to repel the boids away from the chaser
   this.update = function(){
     this.loc.add(this.vel);
+    var steeringForce = p5.Vector.sub(mouseLoc, this.loc);
     if(this.b1 !== mouseLoc){
       var mouseLoc = createVector(mouseX, mouseY);
-      this.loc = p5.Vector.lerp(this.loc, mouseLoc)
-      var steeringForce = p5.Vector.sub(mouseLoc, this.loc);
       steeringForce.normalize();
       steeringForce.mult(.4);
       this.vel.add(steeringForce);

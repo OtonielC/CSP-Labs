@@ -11,23 +11,11 @@ function catcher (loc, vel, radius, col,acc){
     this.render();
   }
 
-
+// this function is supposed to create b1 or the chaser and its supposed to only move around and not do anything
   this.update = function(){
-    this.vel.add(this.acc);
-    this.loc.add(this.vel);
-    if(this !== b1){
-      var d = this.loc.dist(b1.loc)
-      if(d<3000){
-        var steeringForce = p5.Vector.sub(b1.loc, this.loc);
-        steeringForce.normalize();
-        steeringForce.mult(.2);
-        this.vel.add(steeringForce);
-      }
-      if(d < 100){
-        var steeringForce = p5.Vector.sub( this.loc, b1.loc);
-        steeringForce.normalize();
-        steeringForce.mult(0.2);
-        this.vel.add(steeringForce);
+    var mouseLoc = createVector(mouseX, mouseY);
+    if(this.b1 !== mouseLoc){
+      this.loc = p5.Vector.lerp(this.loc, mouseLoc)
       }
     }
   }

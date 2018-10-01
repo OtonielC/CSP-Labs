@@ -8,7 +8,7 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(20, 20, 20);
   fill(200, 30, 150);
-  loadBoids(200);
+  loadBoids(50);
   b1 = new boid(createVector(width/2, height/2), createVector(0,0), 25, color(255,0,0));
 }
 
@@ -28,8 +28,4 @@ function draw() {
      var b = new boid(loc, vel, col, acc)
      boids.push(b)
    }
-   // function spliceboids(){
-   //   if boid.location = ball.mouseLoc;
-   //
-   // }
  }
