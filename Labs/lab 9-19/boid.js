@@ -14,7 +14,7 @@ function boid (loc, vel, col,acc){
   this.update = function(){
     this.loc.add(this.vel);
     var steeringForce = p5.Vector.sub(mouseLoc, this.loc);
-    if(this.b1 !== mouseLoc){
+    if(this.b1 !== catcher.loc){
       var mouseLoc = createVector(mouseX, mouseY);
       steeringForce.normalize();
       steeringForce.mult(.4);
@@ -35,7 +35,7 @@ function boid (loc, vel, col,acc){
   this.render = function(){
     push()
       translate(this.loc.x, this.loc.y);
-      rotate();
+      rotate(this.vel);
       triangle(-5,0,5,0,0,-15)
     pop()
     fill(this.col);

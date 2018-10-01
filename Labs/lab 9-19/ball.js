@@ -3,7 +3,6 @@ function catcher (loc, vel, radius, col,acc){
   this.vel = vel;
   this.rad = radius;
   this.col = col;
-  this.acc = acc;
 
   this.run = function(){
     this.checkEdges();
@@ -18,7 +17,7 @@ function catcher (loc, vel, radius, col,acc){
       this.loc = p5.Vector.lerp(this.loc, mouseLoc)
       }
     }
-  }
+
 
 
   this.checkEdges = function(){
