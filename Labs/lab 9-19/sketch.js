@@ -1,4 +1,4 @@
-var b1;
+//this is a list of all th4e global variables in the project
 var boids = []
 var catcher;
 //  This is a comment
@@ -9,7 +9,7 @@ function setup() {
   background(20, 20, 20);
   fill(200, 30, 150);
   loadBoids(50);
-  b1 = new boid(createVector(width/2, height/2), createVector(0,0), 25, color(255,0,0));
+  catcher = new boid(createVector(width/2, height/2), createVector(0,0), 25, color(255,0,0));
 }
 
 //  The draw function is called @ 30 fps
@@ -18,6 +18,7 @@ function draw() {
 	for(var i = 0; i < boids.length;i++){
 		boids[i].run();
 	}
+  catcher.run()
 }
 
 //this is ,y load boids function

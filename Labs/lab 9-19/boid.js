@@ -1,7 +1,9 @@
+//this is the constructor function
 function boid (loc, vel, col,acc){
   this.loc = loc;
   this.vel = vel;
   this.col = col;
+  this.isdead = false;
 
   this.run = function(){
     this.checkEdges();
@@ -9,18 +11,12 @@ function boid (loc, vel, col,acc){
     this.render();
   }
 
-//this functipon is supposed to repel the boids away from the chaser
+//this function is supposed to repel the boids away from the chaser
   this.update = function(){
     this.loc.add(this.vel);
     var mouseLoc = createVector(mouseX, mouseY);
-    var steeringForce = p5.Vector.sub(this.loc, mouseLoc);
-    if(this !== b1)
-      if(this.b1 !== mouseLoc){
-        steeringForce.normalize();
-        steeringForce.mult(.04);
-        this.vel.add(steeringForce);
       }
-    }
+
 
 
 
@@ -31,11 +27,11 @@ function boid (loc, vel, col,acc){
     if(this.loc.y > height) this.vel.y = -this.vel.y;
   }
 
-
+//this creates the
   this.render = function(){
     push()
       translate(this.loc.x, this.loc.y);
-      rotate(this.vel);
+      rotate(vel.heading());
       triangle(-5,0,5,0,0,-15)
     pop()
     fill(this.col);
