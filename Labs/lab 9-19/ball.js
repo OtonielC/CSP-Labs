@@ -1,4 +1,4 @@
-function catcher (loc, vel, radius, col,acc){
+function catcher (loc, vel, radius, col){
   this.loc = loc;
   this.vel = vel;
   this.rad = radius;
@@ -14,7 +14,7 @@ function catcher (loc, vel, radius, col,acc){
   this.update = function(){
     var mouseLoc = createVector(mouseX, mouseY);
     if(this.b1 !== mouseLoc){
-      this.loc = p5.Vector.lerp(this.loc, mouseLoc)
+      b1.loc = p5.Vector.lerp(this.loc, mouseLoc)
       }
     }
 

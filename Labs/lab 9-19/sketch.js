@@ -19,23 +19,14 @@ function draw() {
 		boids[i].run();
 	}
 }
+
+//this is ,y load boids function
  function loadBoids(numboids){
    for(var i = 0; i < numboids; i++){
      var loc = createVector(random(width), random(height));
-     var vel = createVector(random(-3.0, 3.0), random(-3.0, 3.0));
+     var vel = createVector(random(-1.0, 1.0), random(-1.0, 1.0));
      var col = color(random(255), random(255), random(255));
-     var acc = createVector(0,.01)
-     var b = new boid(loc, vel, col, acc)
+     var b = new boid(loc, vel, col)
      boids.push(b)
-   }
- }
-  function loadcatcher(){
-   for(var i = 0; i < 1; i++){
-     var loc = createVector(random(width), random(height));
-     var vel = createVector(random(-3.0, 3.0), random(-3.0, 3.0));
-     var col = color(random(255), random(255), random(255));
-     var acc = createVector(0,.01)
-     var b = new catcher(loc, vel, col, acc)
-     catcher.push(b)
    }
  }

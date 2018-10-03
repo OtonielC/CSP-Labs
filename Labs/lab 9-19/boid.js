@@ -2,7 +2,6 @@ function boid (loc, vel, col,acc){
   this.loc = loc;
   this.vel = vel;
   this.col = col;
-  this.acc = acc;
 
   this.run = function(){
     this.checkEdges();
@@ -13,12 +12,13 @@ function boid (loc, vel, col,acc){
 //this functipon is supposed to repel the boids away from the chaser
   this.update = function(){
     this.loc.add(this.vel);
-    var steeringForce = p5.Vector.sub(mouseLoc, this.loc);
-    if(this.b1 !== catcher.loc){
-      var mouseLoc = createVector(mouseX, mouseY);
-      steeringForce.normalize();
-      steeringForce.mult(.4);
-      this.vel.add(steeringForce);
+    var mouseLoc = createVector(mouseX, mouseY);
+    var steeringForce = p5.Vector.sub(this.loc, mouseLoc);
+    if(this !== b1)
+      if(this.b1 !== mouseLoc){
+        steeringForce.normalize();
+        steeringForce.mult(.04);
+        this.vel.add(steeringForce);
       }
     }
 
