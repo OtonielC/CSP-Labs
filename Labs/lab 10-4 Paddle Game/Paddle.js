@@ -33,6 +33,6 @@ function Paddle (locX, locY){
 //this function will render the shape of the object which will be a paddle or a rectangle.
   this.render = function(){
     fill(this.col);
-    rect(this.locX, this.locY, rad, rad);
+    rect(this.locX, this.locY, 40, 60);
   }
 }

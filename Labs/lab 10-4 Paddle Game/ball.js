@@ -2,6 +2,11 @@
 //This function will set the variables for the
 //ball and will define its movement and its locaion and color.
 function ball (loc, vel, acc, col, rad){
+      this.loc = loc;
+      this.vel = vel;
+      this.acc = acc;
+      this.col = col;
+      this.rad = rad;
 
 
 
