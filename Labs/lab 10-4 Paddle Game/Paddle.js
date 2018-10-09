@@ -2,7 +2,8 @@
 //This function will set the variables for the
 //paddle and will define its movement and its locaion and color.
 function Paddle (locX, locY){
-
+  this.locX = locX;
+  this.locY = locY;
 
 
 
@@ -17,8 +18,6 @@ function Paddle (locX, locY){
 //and then the paddle will reset.
 //i wil also lerp the paddle to the mouse so the locations are the same but lagged.
   this.update = function(){
-
-
 
 
 }

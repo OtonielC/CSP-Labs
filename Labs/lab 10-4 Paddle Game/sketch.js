@@ -10,23 +10,19 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(20, 20, 20);
   fill(200, 30, 150);
-  loadballs(10);
-
-
+  loadballs(1);
 }
 
 //  The draw function is called @ 30 fps
 //Here im going to try ot draw the paddle
   function draw() {
-    background(20, 20, 20);
-    for(var i = 0; i < balls.length; i++);
+    for(var i = 0; i < balls.length; i++){
       balls[i].run();
-
-
+    }
 }
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have
-//location, velocity, color, and acceleration
+//location, velocity, color, radius, and acceleration
   function loadballs(numballs){
     for(var i = 0; i < numballs; i++);
       var loc = createVector(random(width), random(height));
