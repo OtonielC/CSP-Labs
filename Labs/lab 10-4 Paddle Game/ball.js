@@ -1,12 +1,12 @@
 
 //This function will set the variables for the
 //ball and will define its movement and its locaion and color.
-function ball (loc, vel, acc, col, rad){
+function ball (loc, vel, col, rad){
       this.loc = loc;
       this.vel = vel;
-      this.acc = acc;
       this.col = col;
       this.rad = rad;
+      this.acc = createVector(0,.1);
 //these are all of the functions being called by one function to
 //not have to call every single function individually
   this.run = function(){
@@ -20,9 +20,6 @@ function ball (loc, vel, acc, col, rad){
   this.update = function(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
-
-
-
 
 }
 //the check edges function will set the speed and will also make sure that the balls
