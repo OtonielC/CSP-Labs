@@ -20,6 +20,7 @@ function ball (loc, vel, col, rad){
   this.update = function(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
+    //if Paddle.dist()
 
 }
 //the check edges function will set the speed and will also make sure that the balls

@@ -21,6 +21,6 @@ function Paddle(loc, col){
 //this function will render the shape of the object which will be a paddle or a rectangle.
   this.render = function(){
     fill(this.col);
-    rect(this.loc.x, this.loc.y, 150, 30);
+    rect(this.loc.x, this.loc.y, 140, 30);
   }
 }
