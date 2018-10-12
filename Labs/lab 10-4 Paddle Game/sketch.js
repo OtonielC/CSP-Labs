@@ -11,16 +11,17 @@ function setup() {
   background(20, 20, 20);
   fill(200, 30, 150);
   loadballs(10);
+  paddle = new Paddle(createVector(5,10), 33, color(255,255,255));
 }
 
 //  The draw function is called @ 30 fps
 //Here im going to try ot draw the paddle
   function draw() {
     background(20, 20, 20);
+    paddle.run();
     for(var i = 0; i < balls.length; i++){
       balls[i].run();
     }
-    Paddle.run();
 }
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have

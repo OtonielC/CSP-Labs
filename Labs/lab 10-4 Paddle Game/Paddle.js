@@ -2,11 +2,10 @@
 //This function will set the variables for the
 //paddle and will define its movement and its locaion and color.
 function Paddle(loc, col){
-  this.col = color(random(255), random(255), random(255));
+  this.col = color(255,0,0);
   this.loc = loc;
 
   this.run = function(){
-    this.checkEdges();
     this.update();
     this.render();
   }
@@ -22,6 +21,6 @@ function Paddle(loc, col){
 //this function will render the shape of the object which will be a paddle or a rectangle.
   this.render = function(){
     fill(this.col);
-    rect(this.locX, this.locY, 40, 60);
+    rect(this.loc.x, this.loc.y, 150, 30);
   }
 }
