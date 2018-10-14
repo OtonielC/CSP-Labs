@@ -17,6 +17,7 @@ function setup() {
 //  The draw function is called @ 30 fps
 //Here im going to try ot draw the paddle
   function draw() {
+    background(20, 20, 20);
     paddle.run();
     for(var i = 0; i < balls.length; i++){
       balls[i].run();

@@ -20,7 +20,10 @@ function ball (loc, vel, col, rad){
   this.update = function(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
-    //if Paddle.dist()
+    var v1 = createVector(ball);
+    var v2 = createVector(paddle);
+    var distance = p5.Vector.dist(v1,v2);
+    
 
 }
 //the check edges function will set the speed and will also make sure that the balls
