@@ -20,11 +20,12 @@ function ball (loc, vel, col, rad){
   this.update = function(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
-    var v1 = createVector(ball);
-    var v2 = createVector(paddle);
-    var distance = p5.Vector.dist(v1,v2);
-    
-
+    if(this.loc.x > Paddle.loc.x &&
+    ball.loc.x > Paddle.loc.x + 140 &&
+    ball.loc.y > Paddle.loc.y &&
+    ball.loc.y > Paddle.loc.y + 30){
+      splice(balls, ball, balls.length);
+    }
 }
 //the check edges function will set the speed and will also make sure that the balls
 //dont exit the area that the game is playing in.

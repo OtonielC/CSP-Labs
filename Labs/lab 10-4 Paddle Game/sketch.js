@@ -3,7 +3,7 @@
 //Otoniel Carreon
 //10/4/18
 var balls = [];
-var Paddle = Paddle;
+var Paddle;
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
