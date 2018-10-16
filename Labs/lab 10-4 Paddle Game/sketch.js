@@ -36,3 +36,6 @@ function setup() {
       balls.push(b)
     }
 }
+function loadPaddle(){
+  var loc = createVector(random(width), )
+}
