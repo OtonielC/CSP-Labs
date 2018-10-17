@@ -3,7 +3,7 @@
 //Otoniel Carreon
 //10/4/18
 var balls = [];
-var Paddle;
+var paddle;
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -15,12 +15,15 @@ function setup() {
 }
 
 //  The draw function is called @ 30 fps
-//Here im going to try ot draw the paddle
+//Here im going to call the paddle
   function draw() {
     background(20, 20, 20);
     paddle.run();
-    for(var i = 0; i < balls.length; i++){
+    for(var i = balls.length-1; i >= 0; i--){
       balls[i].run();
+      if(balls[i].iscoliding){
+        balls.splice(balls[i],1);
+      }
     }
 }
 //this function will load the amount of balls into the array balls[]
@@ -35,7 +38,4 @@ function setup() {
       var b = new ball(loc, vel, col, rad);
       balls.push(b)
     }
-}
-function loadPaddle(){
-  var loc = createVector(random(width), )
 }

@@ -4,7 +4,8 @@
 function Paddle(loc, col){
   this.col = color(255,0,0);
   this.loc = loc;
-
+  wid = 140;
+  hei = 30;
   this.run = function(){
     this.update();
     this.render();

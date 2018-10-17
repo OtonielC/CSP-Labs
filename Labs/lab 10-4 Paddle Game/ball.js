@@ -7,6 +7,7 @@ function ball (loc, vel, col, rad){
       this.col = col;
       this.rad = rad;
       this.acc = createVector(0,.1);
+      this.iscoliding = false
 //these are all of the functions being called by one function to
 //not have to call every single function individually
   this.run = function(){
@@ -20,11 +21,11 @@ function ball (loc, vel, col, rad){
   this.update = function(){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
-    if(this.loc.x > Paddle.loc.x &&
-    ball.loc.x > Paddle.loc.x + 140 &&
-    ball.loc.y > Paddle.loc.y &&
-    ball.loc.y > Paddle.loc.y + 30){
-      splice(balls, ball, balls.length);
+    if(this.loc.x > paddle.loc.x &&
+    this.loc.x < (paddle.loc.x + 140) &&
+    this.loc.y > paddle.loc.y &&
+    this.loc.y < (paddle.loc.y + 30)){
+      this.iscoliding = true
     }
 }
 //the check edges function will set the speed and will also make sure that the balls
