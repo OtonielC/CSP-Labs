@@ -23,6 +23,7 @@ function setup() {
       balls[i].run();
       if(balls[i].iscoliding){
         balls.splice(balls[i],1);
+        println('there are ' + balls[i] + 'balls');
       }
     }
 }
@@ -37,5 +38,8 @@ function setup() {
       var rad = (20);
       var b = new ball(loc, vel, col, rad);
       balls.push(b)
+      if(balls.losealife = true){
+        numball+5;
+        }
     }
 }

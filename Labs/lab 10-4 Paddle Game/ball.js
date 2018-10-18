@@ -7,7 +7,8 @@ function ball (loc, vel, col, rad){
       this.col = col;
       this.rad = rad;
       this.acc = createVector(0,.1);
-      this.iscoliding = false
+      this.iscoliding = false;
+      this.losealife = false;
 //these are all of the functions being called by one function to
 //not have to call every single function individually
   this.run = function(){
@@ -25,7 +26,13 @@ function ball (loc, vel, col, rad){
     this.loc.x < (paddle.loc.x + 140) &&
     this.loc.y > paddle.loc.y &&
     this.loc.y < (paddle.loc.y + 30)){
-      this.iscoliding = true
+      this.iscoliding = true;
+    if(this.loc.x > paddle.loc.x &&
+    this.loc.x < (paddle.loc.x + 140) &&
+    this.loc.y > (paddle.loc.y + 15) &&
+    this.loc.y < (paddle.loc.y + 30)){
+      this.losealife = true;
+      }
     }
 }
 //the check edges function will set the speed and will also make sure that the balls
