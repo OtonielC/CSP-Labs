@@ -19,13 +19,15 @@ function setup() {
   function draw() {
     background(20, 20, 20);
     paddle.run();
+    score = 'there are ' + balls.length + ' balls'
     for(var i = balls.length-1; i >= 0; i--){
       balls[i].run();
       if(balls[i].iscoliding){
         balls.splice(balls[i],1);
-        println('there are ' + balls[i] + 'balls');
       }
     }
+    fill(255);
+    text(score, 10, 30);
 }
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have
@@ -38,8 +40,5 @@ function setup() {
       var rad = (20);
       var b = new ball(loc, vel, col, rad);
       balls.push(b)
-      if(balls.losealife = true){
-        numball+5;
         }
     }
-}
