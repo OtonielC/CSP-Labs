@@ -8,6 +8,7 @@ function ball (loc, vel, col, rad){
   this.rad = rad;
   this.acc = createVector(0,.1);
   this.iscoliding = false;
+  this.newround = false;
   //these are all of the functions being called by one function to
   //not have to call every single function individually
   this.run = function(){
@@ -26,6 +27,9 @@ function ball (loc, vel, col, rad){
       this.loc.y > paddle.loc.y &&
       this.loc.y < (paddle.loc.y + 30)){
         this.iscoliding = true;
+        if(this.iscoliding === true && this.vel < 0){
+          this.newround  = true;
+        }
       }
     }
 

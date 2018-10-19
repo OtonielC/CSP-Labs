@@ -2,16 +2,18 @@
 //Paddle Game
 //Otoniel Carreon
 //10/4/18
+var nextround = 5;
+var number = 10;
 var balls = [];
 var paddle;
-var round = 1;
+var stage = 1;
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(20, 20, 20);
   fill(200, 30, 150);
-  loadballs(10);
+  loadballs(number);
   paddle = new Paddle(createVector(5,10), 33, color(255,255,255));
 }
 
@@ -23,27 +25,34 @@ function setup() {
     score = 'there are ' + balls.length + ' balls'
     for(var i = balls.length-1; i >= 0; i--){
       balls[i].run();
-      if(balls[i].iscoliding){
-        balls.splice(balls[i],1);
+      if(balls[i].iscoliding === true ){
+        balls.splice(i,1);
       }
     }
     fill(255);
     text(score, 10, 30);
-    fill(255);
-    text(round, 10, 60);
+    fill(255)
+    text('its round ' + stage + '.', 10, 60);
     //this code checks if the velocity of the balls is negative(going up) or positive(going down).
-  if(this.iscoliding === true && this.vel.y<0){
+  if(ball.newround === true){
+    ball.newround = false;
     //the next round has to begin and the code has to add balls.
     //I have to chaqnge the score so that it equals the next amount of balls
-    balls.length + 5;
-    round + 1
+    if(nextround > 0){
+      number = number + 5;
+      stage = stage + 1
+      nextround = nextround - 1
+      balls = [];
+      loadballs(number)
     }
+  }
+
 }
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have
 //location, velocity, color, radius, and acceleration
-  function loadballs(numball){
-    for(var i = 0; i < numball; i++){
+  function loadballs(number){
+    for(var i = 0; i < number; i++){
       var loc = createVector(random(width), 1);
       var vel = createVector(random(-3.0, 3.0), random(-3.0, 3.0));
       var col = color(random(255), random(255), random(255));
