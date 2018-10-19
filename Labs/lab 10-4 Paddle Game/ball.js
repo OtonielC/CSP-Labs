@@ -27,11 +27,6 @@ function ball (loc, vel, col, rad){
       this.loc.y < (paddle.loc.y + 30)){
         this.iscoliding = true;
       }
-      //this code checks if the velocity of the balls is negative(going up) or positive(going down).
-    if(this.iscoliding === true && this.vel.y<0){
-      //the next round has to begin and the code has to add balls.
-      //I have to chaqnge the score so that it equals the next amount of balls
-      }
     }
 
     //the check edges function will set the speed and will also make sure that the balls

@@ -4,6 +4,7 @@
 //10/4/18
 var balls = [];
 var paddle;
+var round = 1;
 //  The setup function function is called once when your program begins
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -28,6 +29,15 @@ function setup() {
     }
     fill(255);
     text(score, 10, 30);
+    fill(255);
+    text(round, 10, 60);
+    //this code checks if the velocity of the balls is negative(going up) or positive(going down).
+  if(this.iscoliding === true && this.vel.y<0){
+    //the next round has to begin and the code has to add balls.
+    //I have to chaqnge the score so that it equals the next amount of balls
+    balls.length + 5;
+    round + 1
+    }
 }
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have
