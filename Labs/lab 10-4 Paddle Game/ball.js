@@ -23,14 +23,18 @@ function ball (loc, vel, col, rad){
     this.vel.add(this.acc);
     this.loc.add(this.vel);
     if(this.loc.x > paddle.loc.x &&
-      this.loc.x < (paddle.loc.x + 140) &&
+      this.loc.x < paddle.loc.x + 140 &&
       this.loc.y > paddle.loc.y &&
-      this.loc.y < (paddle.loc.y + 30)){
+      this.loc.y < paddle.loc.y + 30){
         this.iscoliding = true;
-        if(this.iscoliding === true && this.vel < 0){
-          this.newround  = true;
-        }
+        //this code is supposed to check if the balls are colliding with the paddle and then
+        //it has to make newround true and thus popping new balls up and making the round
+        //go up by one and that adds balls to the balls[] array
+        if(this.iscoliding == true &&
+          this.vel.y < 0){
+              this.newround = true;
       }
+        }
     }
 
     //the check edges function will set the speed and will also make sure that the balls

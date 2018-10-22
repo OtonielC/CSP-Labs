@@ -2,8 +2,8 @@
 //Paddle Game
 //Otoniel Carreon
 //10/4/18
-var nextround = 5;
-var number = 10;
+var nextround = 4;
+var number = 20;
 var balls = [];
 var paddle;
 var stage = 1;
@@ -19,38 +19,35 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 //Here im going to call the paddle
-  function draw() {
-    background(20, 20, 20);
-    paddle.run();
-    score = 'there are ' + balls.length + ' balls'
-    for(var i = balls.length-1; i >= 0; i--){
-      balls[i].run();
-      if(balls[i].iscoliding === true ){
-        balls.splice(i,1);
+function draw() {
+  background(20, 20, 20);
+  paddle.run();
+  score = 'there are ' + balls.length + ' balls'
+  for(var i = balls.length-1; i >= 0; i--){
+    balls[i].run();
+    if(balls[i].iscoliding === true){
+      balls.splice(i,1);
+    }
+    //this code checks if the velocity of the balls is negative(going up) or positive(going down).
+    if(ball.newround == true){
+      //the next round has to begin and the code has to add balls.
+      //I have to chaqnge the score so that it equals the next amount of balls
+      if(nextround > 0){
+        number = number + 5;
+        stage = stage + 1
+        nextround = nextround - 1
+        loadballs(number)
       }
     }
+  }
     fill(255);
     text(score, 10, 30);
     fill(255)
     text('its round ' + stage + '.', 10, 60);
-    //this code checks if the velocity of the balls is negative(going up) or positive(going down).
-  if(ball.newround === true){
-    ball.newround = false;
-    //the next round has to begin and the code has to add balls.
-    //I have to chaqnge the score so that it equals the next amount of balls
-    if(nextround > 0){
-      number = number + 5;
-      stage = stage + 1
-      nextround = nextround - 1
-      balls = [];
-      loadballs(number)
-    }
-  }
-
 }
-//this function will load the amount of balls into the array balls[]
-//then it will set the variables inside of the balls so each will have
-//location, velocity, color, radius, and acceleration
+  //this function will load the amount of balls into the array balls[]
+  //then it will set the variables inside of the balls so each will have
+  //location, velocity, color, radius, and acceleration
   function loadballs(number){
     for(var i = 0; i < number; i++){
       var loc = createVector(random(width), 1);
@@ -59,5 +56,5 @@ function setup() {
       var rad = (20);
       var b = new ball(loc, vel, col, rad);
       balls.push(b)
-        }
     }
+  }
