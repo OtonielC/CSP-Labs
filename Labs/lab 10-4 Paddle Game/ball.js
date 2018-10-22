@@ -6,6 +6,8 @@ function ball (loc, vel, col, rad){
   this.vel = vel;
   this.col = col;
   this.rad = rad;
+  this.w = 140;
+  this.h = 30;
   this.acc = createVector(0,.1);
   this.iscoliding = false;
   this.newround = false;
@@ -26,14 +28,7 @@ function ball (loc, vel, col, rad){
       this.loc.x < paddle.loc.x + 140 &&
       this.loc.y > paddle.loc.y &&
       this.loc.y < paddle.loc.y + 30){
-        this.iscoliding = true;
-        //this code is supposed to check if the balls are colliding with the paddle and then
-        //it has to make newround true and thus popping new balls up and making the round
-        //go up by one and that adds balls to the balls[] array
-        if(this.iscoliding == true &&
-          this.vel.y < 0){
-              this.newround = true;
-      }
+        this.iscoliding =  true;
         }
     }
 
