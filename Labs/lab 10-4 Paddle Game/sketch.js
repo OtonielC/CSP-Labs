@@ -3,7 +3,7 @@
 //Otoniel Carreon
 //10/4/18
 var nextround = 4;
-var number = 1;
+var number = 20;
 var balls = [];
 var paddle;
 var stage = 1;
