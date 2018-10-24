@@ -43,19 +43,23 @@ function draw() {
       }
       balls.splice(i,1);
       score = score + 1
-      }
-    }
-    fill(255);
-    text('Your Score is ' + score,10,90)
-    fill(255);
-    text(numberofballs, 10, 30);
-    fill(255)
-    text('its round ' + stage + '.', 10, 60);
-    if(balls.length == 0 && score > 0){
-      fill(255,0,0);
-      text('GAME OVER! Your score was ' + score, 350, 400);
     }
   }
+  fill(255);
+  text('Your Score is ' + score,10,90)
+  fill(255);
+  text(numberofballs, 10, 30);
+  fill(255)
+  text('its round ' + stage + '.', 10, 60);
+  if(balls.length == 0 && score > 0){
+    fill(255,0,0);
+    text('GAME OVER! Your score was ' + score, 350, 400);
+  }
+  if(nextround == 5 && balls.length > 0){
+    fill(255,0,0);
+    text('GAME OVER! Your score was ' + score, 350, 400);
+  }
+}
 //this function will load the amount of balls into the array balls[]
 //then it will set the variables inside of the balls so each will have
 //location, velocity, color, radius, and acceleration
