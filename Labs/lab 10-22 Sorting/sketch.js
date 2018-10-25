@@ -15,24 +15,25 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   bubbleSort(txt);
-
+  console.log(txt)
+  preload();
 }
 
 //  The draw function is called @ 30 fps
-function bubbleSort(list) {
-    n = list.length;
+function bubbleSort(txt){
+    n = txt.length;
     for(var i = n-1; i >= 1; i--){
-      for(var x = 0; x <= i - 1; x++){
+      for(var x = 0; x < i; x++){
         //i have to assign one of these numbers to a different variable so it is not
-        //lost and then i make the two list variables equal
+        //lost and then i make the two txt variables equal
         //then i change the one i need to the save variable.
-        if(list[x-1] > list[x]){
-          savedvariable = list[x];
-          list[x] = list[x-1];
-          list[x-1] = savedVariable;
-          console.log(list)
+        if(txt[x-1] > txt[x]){
+          savedvariable = txt[x];
+          txt[x] = txt[x-1];
+          txt[x-1] = savedVariable;
+          //console.log(txt)
         }
       }
     }
-return list;
+return txt;
 }
