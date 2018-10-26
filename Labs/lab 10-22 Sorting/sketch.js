@@ -15,7 +15,6 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   bubbleSort(txt);
-  console.log(txt)
   preload();
 }
 
@@ -31,7 +30,7 @@ function bubbleSort(txt){
           savedvariable = txt[x];
           txt[x] = txt[x-1];
           txt[x-1] = savedVariable;
-          //console.log(txt)
+          console.log(txt)
         }
       }
     }
