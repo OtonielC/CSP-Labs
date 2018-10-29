@@ -7,6 +7,8 @@ var savedVariable;
 var txt;
 function preload(){
   txt = loadStrings("words.txt");
+  console.log("txt loaded");
+  console.log(txt);
 }
 //  The setup function function is called once when your program begins
 function setup() {
@@ -14,8 +16,8 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  bubbleSort(txt);
   preload();
+  bubbleSort(txt);
 }
 
 //  The draw function is called @ 30 fps
@@ -34,5 +36,4 @@ function bubbleSort(txt){
         }
       }
     }
-return txt;
 }
