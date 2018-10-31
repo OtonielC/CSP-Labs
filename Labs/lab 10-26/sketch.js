@@ -10,7 +10,7 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  loadbars(10)
+  loadbars(numbars)
   console.log(bars)
 }
 
@@ -28,9 +28,9 @@ function loadbars(numbars){
       var loc = createVector((0), (100));
       b = new bar(col, loc);
       bars.push(b);
+      if(numbars > 1){
+        for(var x = 0; x < bars[i]; x++)
+        bars.loc.x = bars.loc.x+100;
     }
-    if(numbars > 1){
-      for(var x = 0; x < bars[i]; x++)
-      bars.loc.x = bars.loc.x;
-    }
+}
 }

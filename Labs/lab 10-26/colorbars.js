@@ -7,16 +7,8 @@ function bar(col,loc){
 
 
   this.run = function(){
-    this.update();
     this.render();
   }
-
-
-  this.update = function(){
-
-}
-
-
 //this function will render the shape of the object which will be a square.
   this.render = function(){
     fill(this.col);
