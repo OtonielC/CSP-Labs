@@ -18,16 +18,16 @@ function draw(){
   }
 }
 function bubbleSort(txt){
-  n = data.length;
+  n = countrydata.length;
   for(var i = n-1; i >= 1; i--){
     for(var j = 0; j < i; j++){
       //i have to assign one of these numbers to a different variable so it is not
       //lost and then i make the two txt variables equal
       //then i change the one i need to the save variable.
-      if([j] > txt[j+1]){
-        savedvariable = txt[j];
-        txt[j] = txt[j-1];
-        txt[j-1] = savedVariable;
+      if(txt[countrydata[i].females] > txt[countrydata[i].females-1]){
+        savedvariable = txt[countrydata[i].females];
+        txt[countrydata[i].females] = txt[countrydata[i].females-1];
+        txt[countrydata[i].females-1] = savedVariable;
         console.log(txt)
       }
     }
