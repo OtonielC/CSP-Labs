@@ -8,7 +8,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   loadJSON("population.json", popdata);
-
+  bubbleSort(data)
 }
 
 //  The draw function is called @ 30 fps
@@ -17,22 +17,22 @@ function draw(){
 
   }
 }
-function bubbleSort(txt){
-  n = countrydata.length;
-  for(var i = n-1; i >= 1; i--){
+function bubbleSort(data){
+  for(var i = data.length-1; i >= 1; i--){
     for(var j = 0; j < i; j++){
       //i have to assign one of these numbers to a different variable so it is not
-      //lost and then i make the two txt variables equal
+      //lost and then i make the two data variables equal
       //then i change the one i need to the save variable.
-      if(txt[countrydata[i].females] > txt[countrydata[i].females-1]){
-        savedvariable = txt[countrydata[i].females];
-        txt[countrydata[i].females] = txt[countrydata[i].females-1];
-        txt[countrydata[i].females-1] = savedVariable;
-        console.log(txt)
+      if(data.countrydata[j].females > data.countrydata[j+1].females){
+        savedvariable = data.countrydata[j].females;
+        data.countrydata[j].females = data.countrydata[j+1].females;
+        data.countrydata[j+1].females = savedVariable;
       }
     }
   }
+  console.log(data)
 }
+
 function popdata(jdata){
   data = jdata
 }
