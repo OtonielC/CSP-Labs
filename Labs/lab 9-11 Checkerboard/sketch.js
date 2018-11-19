@@ -15,7 +15,8 @@ function setup() {
   background(235);
   // Create a function that loads the squares into an
   // array of square objects and call the function
-var sqr = []; loadSquares();
+var sqr = [];
+loadSquares();
 for(i = 0; i < squares.length; i++){
   squares[i].render();
 }
@@ -34,8 +35,6 @@ function loadSquares(){
           var clr = color(255,0,0);
           var w = 100;
           squares.push(new Sqr(loc, w, clr));
-        }
-
+    }
   }
-  console.log(squares);
 }
