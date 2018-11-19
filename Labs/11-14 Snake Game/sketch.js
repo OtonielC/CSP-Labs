@@ -13,20 +13,28 @@ function setup() {
   fill(200, 30, 150);
   cols = width/w;
   rows = height/w;
-  framerate(1);
+  frameRate(10);
   snake = new Snake(createVector(width/2, height/2), createVector(1,0));
-
-
+  console.log(snake);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   snake.run();
 }
-function keypressed(){
-  text(keyCode, 50,50);
 
+
+function keyPressed(){
+  text(keyCode, 50,50);
   if(keyCode === UP_ARROW){
     snake.vel = createVector(0,-1*w)
   }
-}
+  if(keyCode === DOWN_ARROW){
+    snake.vel = createVector(0,-1*w)
+  }
+  if(keyCode === LEFT_ARROW){
+    snake.vel = createVector(0,-1*w)
+  }
+  if(keyCode === RIGHT_ARROW){
+    snake.vel = createVector(0,-1*w)
+  }
