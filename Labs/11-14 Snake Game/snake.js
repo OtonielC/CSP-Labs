@@ -1,4 +1,4 @@
-function Snake(loc, vel, col){
+function Snake(loc, vel){
   this.loc = loc;
   this.vel = vel;
 
@@ -14,7 +14,7 @@ function Snake(loc, vel, col){
   }
 
   this.render = function(){
-    fill(255);
+    fill(0,255,0);
     rect(this.loc.x, this.loc.y, w, w);
     console.log(this.loc.x);
   }
