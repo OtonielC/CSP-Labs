@@ -2,7 +2,7 @@
 //11/14
 //Snake game
 var cols, rows;
-var snake;
+var snake = [];
 var w = 20;
 var score = 0;
 var food;
@@ -13,10 +13,9 @@ function setup() {
   fill(200, 30, 150);
   cols = width/w;
   rows = height/w;
-  frameRate(100);
+  frameRate(10);
   snake = new Snake(createVector(width/2, height/2), createVector(1,0));
-  console.log(snake);
-  food = new Food(createVector((width/2), (height/2)));
+  food = new Food(createVector((width/w), (height/w)));
 }
 
 //  The draw function is called @ 30 fps
@@ -40,5 +39,13 @@ function keyPressed(){
   }
   if(keyCode === RIGHT_ARROW){
     snake.vel = createVector(1*w,0)
+  }
+}
+
+function loadSnakes(){
+  for(var i = 0; i < snake.length; i++){
+    loc = createVector(random(width/2), random(height/2));
+    vel = createVector(1,0)
+    
   }
 }
