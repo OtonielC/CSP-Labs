@@ -12,7 +12,7 @@ function Snake(loc, vel){
     this.loc.x = constrain(this.loc.x, 0, width-w);
     this.loc.y = constrain(this.loc.y, 0 ,height-w);
     if(food.iscolliding === true){
-
+      
     }
   }
 

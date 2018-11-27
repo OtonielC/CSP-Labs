@@ -14,7 +14,9 @@ function Food(loc){
       snake.loc.y === this.loc.y + w){
         this.iscolliding = true
       }
+    if(this.iscolliding === true){
     }
+  }
 
 
     this.render = function(){

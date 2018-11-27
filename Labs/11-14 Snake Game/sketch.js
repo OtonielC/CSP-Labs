@@ -15,7 +15,7 @@ function setup() {
   rows = height/w;
   frameRate(10);
   snake = new Snake(createVector(width/2, height/2), createVector(1,0));
-  food = new Food(createVector((width/w), (height/w)));
+  food = new Food(createVector(random(width/w), random(height/w)));
 }
 
 //  The draw function is called @ 30 fps
@@ -46,6 +46,6 @@ function loadSnakes(){
   for(var i = 0; i < snake.length; i++){
     loc = createVector(random(width/2), random(height/2));
     vel = createVector(1,0)
-    
+
   }
 }
