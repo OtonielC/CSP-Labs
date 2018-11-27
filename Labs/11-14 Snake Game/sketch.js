@@ -1,8 +1,9 @@
 //Otoniel Carreon
 //11/14
 //Snake game
+// var snakeLength = 1;
 var cols, rows;
-var snake = [];
+var snake;
 var w = 20;
 var score = 0;
 var food;
@@ -14,13 +15,16 @@ function setup() {
   cols = width/w;
   rows = height/w;
   frameRate(10);
-  snake = new Snake(createVector(width/2, height/2), createVector(1,0));
-  food = new Food(createVector(random(width/w), random(height/w)));
+  food = new Food(createVector(round(random(40)*20), round(random(40)*20)));
+  snake = new Snake(createVector(width/w, height/w), createVector(0,0));
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
+  // for(var i = 0; i < snake.length; i++){
+  //     snake[i].run();
+  // }
   snake.run();
   food.run();
 }
@@ -42,10 +46,11 @@ function keyPressed(){
   }
 }
 
-function loadSnakes(){
-  for(var i = 0; i < snake.length; i++){
-    loc = createVector(random(width/2), random(height/2));
-    vel = createVector(1,0)
-
-  }
-}
+// function loadSnakes(snakeLength){
+//   for(var i = 0; i < snake.length; i++){
+//     loc = createVector(random(width/2), random(height/2));
+//     vel = createVector(1,0)
+//     var b = new Snake(createVector(width/2, height/2), createVector(1,0));
+//     snake.push(b);
+//   }
+// }

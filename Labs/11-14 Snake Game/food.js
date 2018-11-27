@@ -1,5 +1,6 @@
-function Food(loc){
-  this.loc = loc
+function Food(loc, vel){
+  this.loc = loc;
+  this.vel = vel;
   this.iscolliding = false
 
   this.run = function(){
@@ -8,6 +9,8 @@ function Food(loc){
   }
 
   this.update = function(){
+    this.loc.x = constrain(this.loc.x, 0, width-w);
+    this.loc.y = constrain(this.loc.y, 0 ,height-w);
     if(snake.loc.x === this.loc.x &&
       snake.loc.x === this.loc.x + w &&
       snake.loc.y === this.loc.y &&
