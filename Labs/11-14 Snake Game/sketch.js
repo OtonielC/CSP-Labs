@@ -15,8 +15,10 @@ function setup() {
   cols = width/w;
   rows = height/w;
   frameRate(10);
-  food = new Food(createVector(round(random(40)*20), round(random(40)*20)));
-  snake = new Snake(createVector(width/w, height/w), createVector(0,0));
+  food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(0,0));
+  snake = new Snake(createVector(round(width/2), round(height/2)), createVector(0,0));
+  //this is temporary im adding one segments for testing
+  snake.segments.push(createVector(420,400))
 }
 
 //  The draw function is called @ 30 fps
