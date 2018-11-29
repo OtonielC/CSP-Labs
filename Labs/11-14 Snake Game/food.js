@@ -18,6 +18,7 @@ function Food(loc, vel){
         this.iscolliding = true
       }
     if(this.iscolliding === true){
+      
     }
   }
 

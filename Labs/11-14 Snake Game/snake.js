@@ -17,6 +17,7 @@ function Snake(loc, vel){
     for(var i = this.segments.length-1; i > 0; i--){
       this.segments[i].x = this.segments[i-1].x;
       this.segments[i].y = this.segments[i-1].y;
+
     }
   }
 
