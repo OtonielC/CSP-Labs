@@ -15,8 +15,6 @@ function setup() {
   rows = height/w;
   food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(0,0));
   snake = new Snake(createVector(round(width/2), round(height/2)), createVector(0,0));
-  //this is temporary im adding one segments for testing
-  snake.segments.push(createVector(420,400))
   frameRate(10);
 }
 
