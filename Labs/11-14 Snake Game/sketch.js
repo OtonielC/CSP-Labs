@@ -7,6 +7,7 @@ var snake;
 var w = 20;
 var score = 0;
 var food;
+//creates the head of the snake and the first piece of food and sets framerate to slow
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
@@ -21,6 +22,7 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
+  text('Your score is ' + score + ' ', 50,50);
   // for(var i = 0; i < snake.length; i++){
   //     snake[i].run();
   // }
