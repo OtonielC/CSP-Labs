@@ -18,7 +18,8 @@ function Food(loc, vel){
         this.iscolliding = true
       }
     if(this.iscolliding === true){
-      
+      this.loc = round(random(40))*w
+      score+=1
     }
   }
 

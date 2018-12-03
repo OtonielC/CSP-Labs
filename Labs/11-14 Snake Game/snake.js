@@ -17,14 +17,13 @@ function Snake(loc, vel){
     this.segments[0].y = this.loc.y;
     this.loc.add(this.vel);
     if(food.iscolliding === true){
-
+      this.segments+=1
     }
 
 
     for(var i = this.segments.length-1; i > 0; i--){
       this.segments[i].x = this.segments[i-1].x;
       this.segments[i].y = this.segments[i-1].y;
-
     }
 
 
