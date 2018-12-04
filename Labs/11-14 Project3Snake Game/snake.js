@@ -29,7 +29,6 @@ function Snake(loc, vel){
     }
     if(this.loc.x === food.loc.x && this.loc.y === food.loc.y){
       this.segments.push(createVector(62198354,125693874));
-      
     }
 
 
