@@ -15,9 +15,9 @@ function Snake(loc, vel){
   this.update = function(){
     this.loc.x = constrain(this.loc.x, 0, width-w);
     this.loc.y = constrain(this.loc.y, 0 ,height-w);
+    this.loc.add(this.vel);
     this.segments[0].x = this.loc.x;
     this.segments[0].y = this.loc.y;
-    this.loc.add(this.vel);
     if(food.iscolliding === true){
       this.segments+=1
     }
@@ -26,9 +26,11 @@ function Snake(loc, vel){
     for(var i = this.segments.length-1; i > 0; i--){
       this.segments[i].x = this.segments[i-1].x;
       this.segments[i].y = this.segments[i-1].y;
+
     }
     if(this.loc.x === food.loc.x && this.loc.y === food.loc.y){
       this.segments.push(createVector(62198354,125693874));
+      snake.segments[]
     }
 
 
@@ -40,6 +42,6 @@ function Snake(loc, vel){
       rect(this.segments[i].x, this.segments[i].y, w, w);
     }
 
-    rect(this.loc.x, this.loc.y, w, w);
+    // rect(this.loc.x, this.loc.y, w, w);
   }
 }
