@@ -12,22 +12,22 @@ function Food(loc, vel){
     //makes sure that food stays in between in the boundaries
     this.loc.x = constrain(this.loc.x, 0, width-w);
     this.loc.y = constrain(this.loc.y, 0 ,height-w);
-    // if(snake.segments[0].x === this.loc.x &&
-    //   snake.segments[0].x === this.loc.x + w &&
-    //   snake.segments[0].y === this.loc.y &&
-    //   snake.seegments[0].y === this.loc.y + w){
-    //     this.iscolliding = true
-    //   }
-    // if(this.iscolliding === true){
-    //   this.loc = round(random(40))*w
-    //   score+=1
-    // }
-    //this adds points to the score when the snake head touches the food and not the body
-    //also, it changes the food to a random location
     if(snake.loc.x === this.loc.x && snake.loc.y === this.loc.y){
       this.loc.x = (round(random(40))*w)
       this.loc.y = (round(random(40))*w)
       score+=1
+
+
+      // if(snake.segments.length > 0){
+      //   for(var i = 1; i > snake.segments.length-1; i++){
+      //     if(snake.segments[0].x === snake.segments[i].x &&
+      //        snake.segments[0].y === snake.segments[i].y){
+      //       rect(0,0,400,400)
+      //       textSize(200)
+      //       text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
+      //     }
+      //   }
+      // }
     }
   }
 

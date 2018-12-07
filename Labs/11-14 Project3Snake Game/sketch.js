@@ -23,18 +23,16 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(5, 5, 5);
-  b = text('Your score is ' + score + ' ', 50,50);
   // for(var i = 0; i < snake.length; i++){
   //     snake[i].run();
   // }
+  text('Your score is ' + score + ' ', 50,50);
   snake.run();
   food.run();
-  b.run();
 }
 
 
 function keyPressed(){
-  text(keyCode, 50,50);
   if(keyCode === UP_ARROW){
     snake.vel = createVector(0,-1*w)
   }
@@ -48,12 +46,3 @@ function keyPressed(){
     snake.vel = createVector(1*w,0)
   }
 }
-
-// function loadSnakes(snakeLength){
-//   for(var i = 0; i < snake.length; i++){
-//     loc = createVector(random(width/2), random(height/2));
-//     vel = createVector(1,0)
-//     var b = new Snake(createVector(width/2, height/2), createVector(1,0));
-//     snake.push(b);
-//   }
-// }

@@ -34,16 +34,18 @@ function Snake(loc, vel){
     }
 
 
-
-    for(var i = 1; i > segments.length-1; i++){
-      if(this.segments[0].x === this.segments[i+1].x &&
-         this.segments[0].y === this.segments[i+1].y){
-        rect(0,0,400,400)
-        // textSize(200)
-        // text('You have collided with yourself. Youre now dead!'
-        // 'Your score was ' + score '.')
+    for(var i = this.segments.length-1; i > 0; i--){
+      if(this.segments[i].length > 0){
+        if(this.segments[i].loc === this.segments[i-1].loc){
+          rect(0,0,400,400)
+          textSize(200)
+          text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
+        }
       }
     }
+
+
+
 
 
   }
@@ -53,7 +55,5 @@ function Snake(loc, vel){
     for(var i = 0; i < this.segments.length; i++){
       rect(this.segments[i].x, this.segments[i].y, w, w);
     }
-
-    // rect(this.loc.x, this.loc.y, w, w);
   }
 }
