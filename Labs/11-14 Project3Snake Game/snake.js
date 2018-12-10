@@ -35,10 +35,10 @@ function Snake(loc, vel){
 
 
     for(var i = this.segments.length-1; i > 0; i--){
-      if(this.segments[i].length > 0){
-        if(this.segments[i].loc === this.segments[i-1].loc){
-          rect(0,0,400,400)
-          textSize(200)
+      if(this.segments.length > 0){
+        if(this.segments[i].x === this.segments[i-1].x){
+          rect(400,400,200,200)
+          textSize(20)
           text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
         }
       }
