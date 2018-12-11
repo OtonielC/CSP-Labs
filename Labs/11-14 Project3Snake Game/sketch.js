@@ -29,6 +29,7 @@ function draw() {
   text('Your score is ' + score + ' ', 50,50);
   snake.run();
   food.run();
+  if(snake.isTangled()){}
 }
 
 

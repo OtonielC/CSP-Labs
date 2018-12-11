@@ -34,20 +34,27 @@ function Snake(loc, vel){
     }
 
 
-    for(var i = this.segments.length-1; i > 0; i--){
-      if(this.segments.length > 0){
-        if(this.segments[i].x === this.segments[i-1].x){
-          rect(400,400,200,200)
-          textSize(20)
-          text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
+
+
+
+
+
+  }
+
+  this.isTangled = function(){
+        var tangled = false;
+        for(var i = this.segments.length-1; i > 0; i--){
+          if(this.segments.length > 0){
+            if(this.segments[0].x === this.segments[i-1].x ){
+              rect(50,50,700,700)
+              textSize(20)
+              text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
+            }
+          }
+
         }
-      }
-    }
 
-
-
-
-
+        return tangled;
   }
   //draws the snake and makes it a square and makes it green
   this.render = function(){
