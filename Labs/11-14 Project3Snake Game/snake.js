@@ -43,19 +43,34 @@ function Snake(loc, vel){
 
   this.isTangled = function(){
         var tangled = false;
-        for(var i = this.segments.length-1; i > 0; i--){
-          if(this.segments.length > 0){
-            if(this.segments[0].x === this.segments[i-1].x ){
+        for(var i = this.segments.length-1; i > 1; i--){
+            if(this.loc.x === this.segments[i-1].x &&
+               this.loc.y === this.segments[i-1].y){
+              fill(0,0,255)
               rect(50,50,700,700)
+              fill(0,0,0)
               textSize(20)
-              text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
+              text('You have collided with yourself. Youre now dead!' +
+              'Your score was ' + score + '.',100,400)
+              gameOn = false
             }
-          }
-
         }
 
         return tangled;
   }
+  //this function checks if the snake is touching the wall and then stops the game if it is.
+  // this.outofBounds = function(){
+  //   var outofBounds = false;
+  //   if(this.loc.x === 800 && this.loc.y === 800 &&
+  //      this.loc.x === 0 && this.loc.y === 0){
+  //        if(this.vel ===)
+  //      }
+  //     if(this.loc.x === 0 && this.vel.x < 1){
+  //       if(this.loc.y === 0 && this.vel.y < 1){
+  //
+  //       }
+  //     }
+  // }
   //draws the snake and makes it a square and makes it green
   this.render = function(){
     fill(0,255,0);

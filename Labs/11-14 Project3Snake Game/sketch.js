@@ -8,6 +8,7 @@ var w = 20;
 var score = 0;
 var food;
 var segments;
+var gameOn = true;
 //creates the head of the snake and the first piece of food and sets framerate to slow
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -27,8 +28,10 @@ function draw() {
   //     snake[i].run();
   // }
   text('Your score is ' + score + ' ', 50,50);
+if(gameOn === true){
   snake.run();
   food.run();
+}
   if(snake.isTangled()){}
 }
 
@@ -36,6 +39,7 @@ function draw() {
 function keyPressed(){
   if(keyCode === UP_ARROW){
     snake.vel = createVector(0,-1*w)
+
   }
   if(keyCode === DOWN_ARROW){
     snake.vel = createVector(0,1*w)
