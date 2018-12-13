@@ -45,8 +45,9 @@ function Snake(loc, vel){
               rect(50,50,700,700)
               fill(0,0,0)
               textSize(20)
-              text('You have collided with yourself. Youre now dead!' +
+              text('You have collided with yourself. Youre now dead! ' +
               'Your score was ' + score + '.',100,400)
+              text('Press SHIFT to play again!')
               gameOn = false;
               tangles = true;
             }
@@ -70,6 +71,7 @@ function Snake(loc, vel){
          textSize(20);
          text('You have collided with the wall. You`re now dead!' +
          ' Your score was ' + score + '.',100,400)
+         text('Press SHIFT to play again!')
        }
      }
 
