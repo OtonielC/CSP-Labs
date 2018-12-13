@@ -13,8 +13,16 @@ function Food(loc, vel){
     this.loc.x = constrain(this.loc.x, 0, width-w);
     this.loc.y = constrain(this.loc.y, 0 ,height-w);
     if(snake.loc.x === this.loc.x && snake.loc.y === this.loc.y){
-      this.loc.x = (round(random(40))*w)
-      this.loc.y = (round(random(40))*w)
+      // this.loc.x = (round(random(40))*w)
+      // this.loc.y = (round(random(40))*w)
+      for(var i = 0; i < snake.segments.length; i++){
+        this.loc.x = (round(random(40))*w)
+        this.loc.y = (round(random(40))*w)
+        if(this.loc.x === snake.segments[i].x && this.loc.y === snake.segments[i].y){
+          this.loc.x = (round(random(40))*w)
+          this.loc.y = (round(random(40))*w)
+        }
+      }
       score+=1
 
 

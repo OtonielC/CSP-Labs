@@ -20,8 +20,8 @@ function Snake(loc, vel){
     }
 
     this.loc.add(this.vel);
-    this.loc.x = constrain(this.loc.x, 0, width-w);
-    this.loc.y = constrain(this.loc.y, 0 ,height-w);
+    // this.loc.x = constrain(this.loc.x, 0, width-w);
+    // this.loc.y = constrain(this.loc.y, 0 ,height-w);
     this.segments[0].x = this.loc.x;
     this.segments[0].y = this.loc.y;
     if(food.iscolliding === true){
@@ -32,14 +32,9 @@ function Snake(loc, vel){
     if(this.loc.x === food.loc.x && this.loc.y === food.loc.y){
       this.segments.push(createVector(62198354,125693874));
     }
-
-
-
-
-
-
-
   }
+
+
 
   this.isTangled = function(){
         var tangled = false;
@@ -52,26 +47,38 @@ function Snake(loc, vel){
               textSize(20)
               text('You have collided with yourself. Youre now dead!' +
               'Your score was ' + score + '.',100,400)
-              gameOn = false
+              gameOn = false;
+              tangles = true;
             }
         }
-
         return tangled;
   }
+
+
+
+
   //this function checks if the snake is touching the wall and then stops the game if it is.
-  // this.outofBounds = function(){
-  //   var outofBounds = false;
-  //   if(this.loc.x === 800 && this.loc.y === 800 &&
-  //      this.loc.x === 0 && this.loc.y === 0){
-  //        if(this.vel ===)
-  //      }
-  //     if(this.loc.x === 0 && this.vel.x < 1){
-  //       if(this.loc.y === 0 && this.vel.y < 1){
-  //
-  //       }
-  //     }
-  // }
-  //draws the snake and makes it a square and makes it green
+  this.outofBounds = function(){
+    var outofBounds = false;
+    if(this.loc.x > 800 || this.loc.y > 800 ||
+       this.loc.x < 0 ||  this.loc.y < 0){
+         outofBounds = true;
+         gameOn = false;
+         fill(0,0,255);
+         rect(50,50,700,700);
+         fill(0,0,0);
+         textSize(20);
+         text('You have collided with the wall. You`re now dead!' +
+         ' Your score was ' + score + '.',100,400)
+       }
+     }
+
+
+
+
+
+
+//  draws the snake and makes it a square and makes it green
   this.render = function(){
     fill(0,255,0);
     for(var i = 0; i < this.segments.length; i++){

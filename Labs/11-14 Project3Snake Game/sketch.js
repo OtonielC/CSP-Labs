@@ -18,7 +18,7 @@ function setup() {
   rows = height/w;
   food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(0,0));
   snake = new Snake(createVector(round(width/2), round(height/2)), createVector(0,0));
-  frameRate(10);
+  frameRate(15);
 }
 
 //  The draw function is called @ 30 fps
@@ -29,10 +29,19 @@ function draw() {
   // }
   text('Your score is ' + score + ' ', 50,50);
 if(gameOn === true){
-  snake.run();
-  food.run();
+  fill(0,0,255)
+  rect(50,50,700,700)
+  fill(0,0,0)
+  textSize(20)
+  text('Welcome to SNAKE GAME! Press SPACE to start!',100,400)
+  if(keyCode === SPACE){
+    snake.run();
+    food.run();
+
+  }
 }
   if(snake.isTangled()){}
+  if(snake.outofBounds()){}
 }
 
 
