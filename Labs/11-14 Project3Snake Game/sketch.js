@@ -19,7 +19,7 @@ function setup() {
   background(5, 5, 5);
   cols = width/w;
   rows = height/w;
-  food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(0,0));
+  food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(w,0));
   snake = new Snake(createVector(round(width/2), round(height/2)), createVector(0,0));
   frameRate(15);
 }
@@ -29,7 +29,7 @@ function draw() {
   background(5, 5, 5);
   text('Your score is ' + score + ' ', 50,50);
   if(startScreen === true){
-    fill(0,0,255)
+    fill(255,255,255)
     rect(50,50,700,700)
     fill(0,0,0)
     textSize(20)
@@ -42,9 +42,8 @@ function draw() {
         startScreen = false;
       }
     }
-  if(snake.isTangled()){}
-  if(snake.outofBounds()){}
-  if(playAgain()){}
+    if(snake.isTangled()){}
+    if(snake.outofBounds()){}
 }
 
 
@@ -64,16 +63,19 @@ function keyPressed(){
   if(keyCode === ENTER){
     startGame = true;
   }
-  if(keyCode === SHIFT){
-    startGame === true;
+  if(keyCode === DELETE){
+    gameOn = true;
+    startGame = true;
+    if(snake.isTangled()){}
+    if(snake.outofBounds()){}
   }
 }
- function playAgain(){
-   if(snake.outofBounds === true || snake.tangled === true){
-     fill(0,0,255)
-     rect(50,50,700,700)
-     fill(0,0,0)
-     textSize(20)
-     text('Play again? Press SHIFT')
-   }
- }
+ // function playAgain(){
+ //   if(snake.outofBounds === true || snake.tangled === true){
+ //     fill(0,0,255)
+ //     rect(50,50,700,700)
+ //     fill(0,0,0)
+ //     textSize(20)
+ //     text('Play again? Press SHIFT')
+ //   }
+ // }

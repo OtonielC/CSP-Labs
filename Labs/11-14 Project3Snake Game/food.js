@@ -9,9 +9,13 @@ function Food(loc, vel){
   }
 
   this.update = function(){
+    this.loc.add(this.vel);
+    if(this.loc.x > 780 || this.loc.x < 20){
+      this.loc.add()
+    }
     //makes sure that food stays in between in the boundaries
-    this.loc.x = constrain(this.loc.x, 0, width-w);
-    this.loc.y = constrain(this.loc.y, 0 ,height-w);
+    // this.loc.x = constrain(this.loc.x, 0, width-w);
+    // this.loc.y = constrain(this.loc.y, 0 ,height-w);
     if(snake.loc.x === this.loc.x && snake.loc.y === this.loc.y){
       // this.loc.x = (round(random(40))*w)
       // this.loc.y = (round(random(40))*w)

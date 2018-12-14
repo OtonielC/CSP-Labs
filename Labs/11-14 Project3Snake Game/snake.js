@@ -41,7 +41,7 @@ function Snake(loc, vel){
         for(var i = this.segments.length-1; i > 1; i--){
             if(this.loc.x === this.segments[i-1].x &&
                this.loc.y === this.segments[i-1].y){
-              fill(0,0,255)
+              fill(255,255,255)
               rect(50,50,700,700)
               fill(0,0,0)
               textSize(20)
@@ -65,13 +65,13 @@ function Snake(loc, vel){
        this.loc.x < 0 ||  this.loc.y < 0){
          outofBounds = true;
          gameOn = false;
-         fill(0,0,255);
+         fill(255,255,255);
          rect(50,50,700,700);
          fill(0,0,0);
          textSize(20);
          text('You have collided with the wall. You`re now dead!' +
          ' Your score was ' + score + '.',100,400)
-         text('Press SHIFT to play again!')
+         text('Press SHIFT to play again!',100,600)
        }
      }
 
