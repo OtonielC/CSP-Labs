@@ -2,12 +2,12 @@ function Food(loc, vel){
   this.loc = loc;
   this.vel = vel;
   this.iscolliding = false
-
+//runs all functions in this page
   this.run = function(){
     this.render();
     this.update();
   }
-
+//updatexzs the food so it adds a point to the score
   this.update = function(){
     //this.loc.add(this.vel);
     if(this.loc.x > 780 || this.loc.x < 20){
@@ -17,8 +17,7 @@ function Food(loc, vel){
     // this.loc.x = constrain(this.loc.x, 0, width-w);
     // this.loc.y = constrain(this.loc.y, 0 ,height-w);
     if(snake.loc.x === this.loc.x && snake.loc.y === this.loc.y){
-      // this.loc.x = (round(random(40))*w)
-      // this.loc.y = (round(random(40))*w)
+//this checks if the food is appearing in the location of the snake so then it randomizes again and appears somewhere else.
       for(var i = 0; i < snake.segments.length; i++){
         this.loc.x = (round(random(40))*w)
         this.loc.y = (round(random(40))*w)
@@ -30,19 +29,8 @@ function Food(loc, vel){
       score+=1
 
 
-      // if(snake.segments.length > 0){
-      //   for(var i = 1; i > snake.segments.length-1; i++){
-      //     if(snake.segments[0].x === snake.segments[i].x &&
-      //        snake.segments[0].y === snake.segments[i].y){
-      //       rect(0,0,400,400)
-      //       textSize(200)
-      //       text('You have collided with yourself. Youre now dead!' +  'Your score was ' + score + '.')
-      //     }
-      //   }
-      // }
-    }
   }
-
+//renders the food
 
     this.render = function(){
       fill(255,0,0);

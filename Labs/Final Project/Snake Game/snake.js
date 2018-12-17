@@ -20,22 +20,21 @@ function Snake(loc, vel){
     }
 
     this.loc.add(this.vel);
-    // this.loc.x = constrain(this.loc.x, 0, width-w);
-    // this.loc.y = constrain(this.loc.y, 0 ,height-w);
+    //this code makes sure the segments head is set to the location of this.loc
     this.segments[0].x = this.loc.x;
     this.segments[0].y = this.loc.y;
     if(food.iscolliding === true){
       this.segments+=1
     }
 
-
+//this adds a segment to the snake by appearing it somewhere far away and making it follow the snake.
     if(this.loc.x === food.loc.x && this.loc.y === food.loc.y){
       this.segments.push(createVector(62198354,125693874));
     }
   }
 
 
-
+//this function makes sure that the snake game ends when the snake gets tangled.
   this.isTangled = function(){
         var tangled = false;
         for(var i = this.segments.length-1; i > 1; i--){

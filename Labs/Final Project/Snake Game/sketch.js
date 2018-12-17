@@ -29,6 +29,7 @@ function setup() {
 function draw() {
   background(5, 5, 5);
   text('Your score is ' + score + ' ', 50,50);
+  //this sets the start screen equal to true so that when it is false it dissapoears
   if(startScreen === true){
     fill(255,255,255)
     rect(50,50,700,700)
@@ -36,6 +37,7 @@ function draw() {
     textSize(20)
     text('Welcome to SNAKE GAME! Press ENTER to start!',100,400)
   }
+  //this is the function for the whoole game. if gameOn is turned off then the whole project is turned off.
     if(gameOn === true){
       if(startGame === true){
         snake.run();
@@ -47,7 +49,7 @@ function draw() {
     if(snake.outofBounds()){}
 }
 
-
+//These keys are the movement and resets and starts of the game.
 function keyPressed(){
   if(keyCode === UP_ARROW){
     snake.vel = createVector(0,-1*w)
@@ -71,12 +73,3 @@ function keyPressed(){
     if(snake.outofBounds()){}
   }
 }
- // function playAgain(){
- //   if(snake.outofBounds === true || snake.tangled === true){
- //     fill(0,0,255)
- //     rect(50,50,700,700)
- //     fill(0,0,0)
- //     textSize(20)
- //     text('Play again? Press SHIFT')
- //   }
- // }
