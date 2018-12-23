@@ -5,7 +5,6 @@ function PacMan(loc, vel){
   this.run = function(){
     this.update();
     this.render();
-    this.checkEdges();
   }
 
 
@@ -15,9 +14,6 @@ function PacMan(loc, vel){
   }
 
 
-  this.checkEdges = function(){
-
-  }
 
 
 
